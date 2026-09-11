@@ -16,6 +16,7 @@ import ChangePw from "./pages/mypage/ChangePw"
 import ChangeInfo from "./pages/mypage/Changeinfo"
 import Chat from "./pages/Chat"
 import Board1 from "./pages/Board1"
+import BoardDetail from "./pages/BoardDetail"
 
 
 const App = () => {
@@ -29,14 +30,18 @@ const App = () => {
 			<Link to="/Chat"><Button type="dashed" size="small">채팅</Button></Link>
 			<Link to="/board"><Button type="dashed" size="small">게시판</Button></Link>
 			<Link to="/board1"><Button type="dashed" size="small">게시판1</Button></Link>
+		
+			 
 			<Link to="/ItemInsert"><Button type="dashed" size="small">물품등록</Button></Link>
 			<Link to="/ItemList"><Button type="dashed" size="small">물품목록</Button></Link>
 
 			{ !isLogin && <Link to="/join"><Button type="dashed" size="small">회원가입</Button></Link> }
 			{ !isLogin && <Link to="/login"><Button type="dashed" size="small">로그인</Button></Link> }
 			
-			{ isLogin && <Link to="/logout"><Button type="dashed" size="small">로그아웃</Button></Link> }
+			
 			{ isLogin && <Link to="/mypage"><Button type="dashed" size="small">마이페이지</Button></Link> }
+			{ isLogin && <Link to="/logout"><Button type="dashed" size="small">로그아웃</Button></Link> }
+
 			<hr />
 
 			<Routes>
@@ -51,6 +56,7 @@ const App = () => {
 				<Route path="/Chat" element={<Chat />} />
 				
 				<Route path="/board" element={<Board />} />
+				<Route path="/board1/detail" element={<BoardDetail />} />
 				<Route path="/board1" element={<Board1 />} />
 				<Route path="/ItemInsert" element={<ItemInsert />} />
 				<Route path="/ItemList" element={<ItemList />} />

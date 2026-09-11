@@ -66,13 +66,13 @@ const ChangePW = () => {
             암호변경
             <form onSubmit={handleSubmit}>
                 <div>
-                    <input type="password" value={oldpw} onChange={(e) => setOldpw(e.target.value)} ref={oldRef} />
+                이전 비밀번호 <input type="password" value={oldpw} onChange={(e) => setOldpw(e.target.value)} ref={oldRef} />
                 </div>
                 <div>
-                    <input type="password" value={newpw} onChange={(e) => setNewpw(e.target.value)} ref={newRef} />
+                새 비밀번호 <input type="password" value={newpw} onChange={(e) => setNewpw(e.target.value)} ref={newRef} />
                 </div>
                 <div>
-                    <input type="password" value={newpw1} onChange={(e) => setNewpw1(e.target.value)} ref={new1Ref} />
+                새 비밀번호 확인 <input type="password" value={newpw1} onChange={(e) => setNewpw1(e.target.value)} ref={new1Ref} />
                 </div>
                 <div>
                     <button type="submit">암호변경</button>
