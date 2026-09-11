@@ -25,6 +25,13 @@ const Board = () => {
         setRows(data.rows);
     }
 
+      //페이지네이션 컴포넌트에서 onChange가 될때 호출될 함수를 생성함.
+    const onChange = (page, pageSize) => {
+        console.log(page, pageSize);
+        setPage(page);
+        setCnt(pageSize);
+    }
+
 
     const handleContent = (no) => {
         //게시글 상세화면으로 이동    
@@ -34,7 +41,7 @@ const Board = () => {
     // 3. 이펙트 (함수를 호출하기 위한 타이밍을 설정) [   ] 비어 있으면 최초 1번만됨
     useEffect(() => {
         handleList();
-    }, []);
+    }, [page,cnt]);
 
 
     // 5. 화면 표시
@@ -69,7 +76,7 @@ const Board = () => {
                 </tbody>
             </table>
 
-            <Pagination defaultCurrent={1} total={50} />
+            <Pagination current={page} total={total} onChange={onChange} />
 
 
         </div>
