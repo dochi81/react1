@@ -33,6 +33,8 @@ const Board1 = () => {
     }, [   ]);
 
 
+
+    
     return (
         <div>
             <table>
